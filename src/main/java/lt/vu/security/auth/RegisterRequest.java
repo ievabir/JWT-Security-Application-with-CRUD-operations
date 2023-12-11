@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 
 public class RegisterRequest {
 
-    //atributai reikalingi registruot useri
     private String firstname;
     private String lastname;
     private String email;
     private String password;
+    private String role;
 }

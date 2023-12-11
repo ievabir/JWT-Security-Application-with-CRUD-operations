@@ -11,22 +11,23 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Data //getters, setters
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity //jakarta.persistence package
+@Entity
 @Table(name = "_user") //jakarta.persistence Not to confuse with PostgresSQL User
 public class User implements UserDetails {
-    @Id //jakarta.persistence
-    @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastname;
+    @Column(unique = true)
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role role = Role.USER;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -64,6 +65,12 @@ public class User implements UserDetails {
     }
 
     public enum Role{
-        USER, ADMIN
+        USER, ADMIN, TEAM_LEAD
     }
+
+    public void setRole(String role){
+        this.role = Role.valueOf(role.toUpperCase());
+    }
+
+
 }

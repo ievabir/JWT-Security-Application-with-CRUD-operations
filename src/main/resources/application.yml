@@ -14,3 +14,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
       database: PostgreSQL
       database-platform: org.hibernate.dialect.PostgreSQLDialect
+  integration:
+    management:
+      default-logging-enabled: true
