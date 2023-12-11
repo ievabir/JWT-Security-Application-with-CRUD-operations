@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtService jwtService = new JwtService();
+    private final JwtService jwtService ;
     private final UserDetailsService userDetailsService;
     @Override
     protected void doFilterInternal(
@@ -43,6 +43,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         jwt = authHeader.substring(7);
         userEmail = jwtService.extractUsername(jwt);
+        //System.out.println(userEmail);
 
         if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             //get user details from the database
