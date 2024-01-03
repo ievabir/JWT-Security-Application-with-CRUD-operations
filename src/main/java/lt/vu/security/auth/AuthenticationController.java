@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/auth/")
 @RequiredArgsConstructor
 
-//has endpoints that allow to create new account or authenticate an existing user
-
 public class AuthenticationController {
 
     private final AuthenticationService service;

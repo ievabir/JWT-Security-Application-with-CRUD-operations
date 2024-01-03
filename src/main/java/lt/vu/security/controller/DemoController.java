@@ -1,3 +1,5 @@
+//For testing authentication token
+
 package lt.vu.security.controller;
 
 import org.springframework.http.ResponseEntity;
