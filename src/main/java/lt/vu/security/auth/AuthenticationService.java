@@ -43,7 +43,7 @@ public class AuthenticationService {
                         request.getPassword()
                 )
         );
-        //if we get to this point, the user is authenticated. we find user by email
+
         var user = repository.findByEmail(request.getEmail()).orElseThrow();
 
         var jwtToken = jwtService.generateToken(user);

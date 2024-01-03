@@ -26,7 +26,6 @@ public class Employee {
 
     @JsonIgnoreProperties({"firstName", "lastname", "email", "password", "role", "enabled", "username", "authorities", "accountNonExpired", "accountNonLocked", "credentialsNonExpired"})
 
-
     public User getReportsTo() {
         return reportsTo;
     }

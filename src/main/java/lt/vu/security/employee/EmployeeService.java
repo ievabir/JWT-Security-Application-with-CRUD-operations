@@ -51,7 +51,6 @@ public class EmployeeService {
         return employeeRepository.save(newEmployee);
     }
 
-
     public List<Employee> findByReportsToEmail(String authenticatedUserEmail) {
         return employeeRepository.findByReportsToEmail(authenticatedUserEmail);
     }

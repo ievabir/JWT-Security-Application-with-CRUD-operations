@@ -27,7 +27,6 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
-
     public String generateToken(UserDetails userDetails){
         String role = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
